@@ -2,7 +2,7 @@
 
 # project information
 project_name: mame
-project_url: "https://mame.net/"
+project_url: "https://www.mamedev.org/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mame-logo.png"
 project_blurb: "[MAME]({{ project_url }}) is a free and open-source emulator designed to emulate the hardware of arcade games, video game consoles, old computers and other systems in software on modern personal computers."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
