@@ -222,8 +222,6 @@ services:
   mame:
     image: lscr.io/linuxserver/mame:latest
     container_name: mame
-    security_opt:
-      - seccomp:unconfined #optional
     environment:
       - PUID=1000
       - PGID=1000
@@ -243,7 +241,6 @@ services:
 ```bash
 docker run -d \
   --name=mame \
-  --security-opt seccomp=unconfined `#optional` \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
@@ -270,7 +267,6 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-v /config` | Users home directory in the container, stores local files and settings |
 | `-v /mame:ro` | MAME directory containing artwork, roms, and assets. |
 | `--shm-size=` | This is needed for MAME to function. |
-| `--security-opt seccomp=unconfined` | For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. |
 
 ## Environment variables from files (Docker secrets)
 
