@@ -945,8 +945,8 @@ login                                                                         1:
 logsave                                                                       1.47.0-2.4~exp1ubuntu4.1                deb                         
 lsb-release                                                                   12.0-2                                  deb                         
 make                                                                          4.3-4.1build2                           deb                         
-mame                                                                          0.282+dfsg1-0ubuntu1~ppa1~noble1        deb                         
-mame-data                                                                     0.282+dfsg1-0ubuntu1~ppa1~noble1        deb                         
+mame                                                                          0.283+dfsg1-0ubuntu1~ppa1~noble1        deb                         
+mame-data                                                                     0.283+dfsg1-0ubuntu1~ppa1~noble1        deb                         
 man-db                                                                        2.12.0-4build2                          deb                         
 mawk                                                                          1.3.4.20240123-1build1                  deb                         
 media-types                                                                   10.1.0                                  deb                         
