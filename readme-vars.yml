@@ -108,4 +108,5 @@ init_diagram: |
   "mame:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "03.07.25:", desc: "Initial release."}
