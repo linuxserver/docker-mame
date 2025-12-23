@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Copy default config
+if [ ! -f "${HOME}/.mame/mame.ini" ]; then
+  mkdir -p "${HOME}/.mame"
+  cp \
+    /defaults/mame.ini \
+    "${HOME}/.mame/mame.ini"
+fi
+
+# Run MAME
+foot -e /usr/games/mame
