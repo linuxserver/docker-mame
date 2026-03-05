@@ -11,7 +11,8 @@ LABEL maintainer="thelamer"
 
 # title
 ENV TITLE=MAME \
-    NO_DECOR=true
+    NO_DECOR=true \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
