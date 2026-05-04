@@ -108,6 +108,7 @@ init_diagram: |
   "mame:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "04.05.26:", desc: "Rebase to resolute."}
   - {date: "05.03.26:", desc: "Make Wayland default disable with PIXELFLUX_WAYLAND=false."}
   - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "03.07.25:", desc: "Initial release."}

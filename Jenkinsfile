@@ -33,6 +33,7 @@ pipeline {
     CI_PORT = '3001'
     CI_SSL = 'true'
     CI_DELAY = '120'
+    CI_WEB_SCREENSHOT_DELAY = '30'
     CI_DOCKERENV = 'TZ=US/Pacific'
     CI_AUTH = 'user:password'
     CI_WEBPATH = ''
@@ -148,7 +149,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' curl -s -L https://ppa.launchpadcontent.net/c.falco/mame/ubuntu/dists/noble/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: mame' | awk -F ': ' '/Version/{print $2;exit}' | awk -F'ubuntu' '{print $1}' | sed 's/+//g' ''',
+            script: ''' curl -s -L https://ppa.launchpadcontent.net/c.falco/mame/ubuntu/dists/resolute/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: mame' | awk -F ': ' '/Version/{print $2;exit}' | awk -F'ubuntu' '{print $1}' | sed 's/+//g' ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }
@@ -893,6 +894,7 @@ pipeline {
                 --shm-size=1gb \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 -e IMAGE=\"${IMAGE}\" \
+                -e WEB_SCREENSHOT_DELAY=\"${CI_WEB_SCREENSHOT_DELAY}\" \
                 -e DOCKER_LOGS_TIMEOUT=\"${CI_DELAY}\" \
                 -e TAGS=\"${CI_TAGS}\" \
                 -e META_TAG=\"${META_TAG}\" \
