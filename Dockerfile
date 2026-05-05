@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-selkies:ubunturesolute
 
 # set version label
 ARG BUILD_DATE
@@ -20,12 +20,7 @@ RUN \
     /usr/share/selkies/www/icon.png \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mame-logo.png && \
   echo "**** install packages ****" && \
-  apt-key adv \
-    --keyserver hkp://keyserver.ubuntu.com:80 \
-    --recv-keys BD90C31EDB703FB5C74D68DBE309D18C36773207 && \
-  echo \
-    "deb https://ppa.launchpadcontent.net/c.falco/mame/ubuntu  noble main" > \
-    /etc/apt/sources.list.d/mame.list && \
+  add-apt-repository -y ppa:c.falco/mame && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
   apt-get install --no-install-recommends -y \
